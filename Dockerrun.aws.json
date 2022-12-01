@@ -1,9 +1,29 @@
 {
   "AWSEBDockerrunVersion": 2,
+  "volumes": [
+    {
+      "name": "ui",
+      "host": {
+        "sourcePath": "/var/app/current/app-ui"
+      }
+    },
+    {
+      "name": "api",
+      "host": {
+        "sourcePath": "/var/app/current/app-nginx"
+      }
+    },
+    {
+      "name": "nginx",
+      "host": {
+        "sourcePath": "/var/app/current/proxy/conf.d"
+      }
+    }  
+  ],
   "containerDefinitions": [
     {
       "name": "ui",
-      "image": "921490761789.dkr.ecr.ap-southeast-1.amazonaws.com/app-ui",
+      "image": "public.ecr.aws/b5z0i1v6/app-ui",
       "hostname": "ui",
       "essential": true,
       "memory": 1024,
@@ -16,7 +36,7 @@
     },
     {
       "name": "api",
-      "image": "921490761789.dkr.ecr.ap-southeast-1.amazonaws.com/app-api",
+      "image": "public.ecr.aws/b5z0i1v6/app-api",
       "hostname": "api",
       "essential": true,
       "memory": 512,
@@ -29,7 +49,7 @@
     },
     {
       "name": "nginx",
-      "image": "921490761789.dkr.ecr.ap-southeast-1.amazonaws.com/app-nginx",
+      "image": "public.ecr.aws/b5z0i1v6/app-nginx",
       "hostname": "nginx",
       "essential": true,
       "portMappings": [
