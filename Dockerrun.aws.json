@@ -6,19 +6,7 @@
       "host": {
         "sourcePath": "/var/app/current/app-ui"
       }
-    },
-    {
-      "name": "api",
-      "host": {
-        "sourcePath": "/var/app/current/app-nginx"
-      }
-    },
-    {
-      "name": "nginx",
-      "host": {
-        "sourcePath": "/var/app/current/proxy/conf.d"
-      }
-    }  
+    } 
   ],
   "containerDefinitions": [
     {
@@ -33,33 +21,6 @@
           "containerPort": 4200
         }
       ]
-    },
-    {
-      "name": "api",
-      "image": "637904357981.dkr.ecr.us-east-2.amazonaws.com/app-api",
-      "hostname": "api",
-      "essential": true,
-      "memory": 512,
-      "portMappings": [
-        {
-          "hostPort": 3000,
-          "containerPort": 3000
-        }
-      ]
-    },
-    {
-      "name": "nginx",
-      "image": "637904357981.dkr.ecr.us-east-2.amazonaws.com/app-nginx",
-      "hostname": "nginx",
-      "essential": true,
-      "portMappings": [
-        {
-          "hostPort": 80,
-          "containerPort": 80
-        }
-      ],
-      "links": ["ui", "api"],
-      "memory": 512
     }
   ]
 }
