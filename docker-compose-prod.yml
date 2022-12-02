@@ -4,14 +4,14 @@ services:
     build: 
       context: ./api
     container_name: api
-    image: public.ecr.aws/b5z0i1v6/app-api
+    image: 637904357981.dkr.ecr.us-east-2.amazonaws.com/app-api
     ports: 
       - "3000:3000"
   ui: 
     build: 
       context: ./ui
     container_name: ui
-    image: public.ecr.aws/b5z0i1v6/app-ui
+    image: 637904357981.dkr.ecr.us-east-2.amazonaws.com/app-ui
     ports: 
       - "4200:4200"
   nginx: 
@@ -21,7 +21,7 @@ services:
     depends_on: 
       - ui
       - api
-    image: public.ecr.aws/b5z0i1v6/app-nginx
+    image: 637904357981.dkr.ecr.us-east-2.amazonaws.com/app-nginx
     ports: 
       - "80:80"
     
