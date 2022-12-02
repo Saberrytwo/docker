@@ -23,7 +23,7 @@
   "containerDefinitions": [
     {
       "name": "ui",
-      "image": "public.ecr.aws/b5z0i1v6/app-ui",
+      "image": "637904357981.dkr.ecr.us-east-2.amazonaws.com/app-ui",
       "hostname": "ui",
       "essential": true,
       "memory": 1024,
@@ -36,7 +36,7 @@
     },
     {
       "name": "api",
-      "image": "public.ecr.aws/b5z0i1v6/app-api",
+      "image": "637904357981.dkr.ecr.us-east-2.amazonaws.com/app-api",
       "hostname": "api",
       "essential": true,
       "memory": 512,
@@ -49,7 +49,7 @@
     },
     {
       "name": "nginx",
-      "image": "public.ecr.aws/b5z0i1v6/app-nginx",
+      "image": "637904357981.dkr.ecr.us-east-2.amazonaws.com/app-nginx",
       "hostname": "nginx",
       "essential": true,
       "portMappings": [
